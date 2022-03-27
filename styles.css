@@ -2,7 +2,14 @@
     --grid-cols: 1;
     --grid-rows: 1;
   }
-  
+
+  .mainContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+  }
+
   #gridContainer {
     display: grid;
     max-height: 500px;
