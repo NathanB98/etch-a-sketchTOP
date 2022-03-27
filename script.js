@@ -1,13 +1,18 @@
-const container = document.getElementById("gridContainer");
+const gridContainer = document.getElementById("gridContainer");
 
 function makeRows(rows, cols) {
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-cols', cols);
+    gridContainer.style.setProperty('--grid-rows', rows);
+    gridContainer.style.setProperty('--grid-cols', cols);
     for (i = 0; i < (rows * cols); i++) {
       let cell = document.createElement("div");
-      cell.innerText = (i + 1);
-      container.appendChild(cell).className = "grid-item";
+      gridContainer.appendChild(cell).className = "grid-item";
+
+      gridContainer.addEventListener('mouseover', changeColor);
     };
   };
-  
+
+function changeColor(e) {
+    e.target.style.backgroundColor = '#000000';
+}
+
   makeRows(16, 16);
